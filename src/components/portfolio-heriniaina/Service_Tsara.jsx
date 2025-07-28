@@ -78,7 +78,7 @@ const ServiceTsara = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="w-[280px] bg-gray-100 dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-full h-[200px] flex flex-col"
+              className=" bg-gray-100 dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-full h-[200px] flex flex-col"
             >
               <div className="flex items-center mb-3">
                 <div

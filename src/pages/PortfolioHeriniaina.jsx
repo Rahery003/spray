@@ -4,7 +4,7 @@ import Hero from "../components/portfolio-heriniaina/Hero_Tsara";
 import About from "../components/portfolio-heriniaina/About_Tsara";
 import Skills from "../components/portfolio-heriniaina/Skills_Tsara";
 import Projects from "../components/portfolio-heriniaina/Projects_Tsara";
-import ServicesTsara from "../components/portfolio-heriniaina/service_tsara";
+import ServicesTsara from "../components/portfolio-heriniaina/Service_Tsara";
 import Contact from "../components/portfolio-heriniaina/Contact_Tsara";
 import Footer from "../components/portfolio-heriniaina/Footer_Tsara";
 
