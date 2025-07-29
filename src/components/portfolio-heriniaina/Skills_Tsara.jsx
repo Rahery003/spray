@@ -3,8 +3,7 @@ import { Globe, Network, Server, Shield } from "lucide-react";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef < HTMLElement > null;
-
+  const sectionRef = useRef(null);
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -105,6 +104,7 @@ const Skills = () => {
 
   return (
     <section
+      ref={sectionRef}
       id="skills"
       className="py-20 bg-white dark:bg-[linear-gradient(to_bottom_right,#111827,#1e293b,rgb(27,0,133))] transition-colors duration-500"
     >

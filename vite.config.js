@@ -4,70 +4,54 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  darkMode: "class",
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-      },
-      animation: {
-        "fade-in-up": "fadeInUp 0.6s ease-out",
-        "fade-in-down": "fadeInDown 0.6s ease-out",
-        "slide-in-left": "slideInLeft 0.6s ease-out",
-        "slide-in-right": "slideInRight 0.6s ease-out",
-        float: "float 3s ease-in-out infinite",
-      },
-      keyframes: {
-        fadeInUp: {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(30px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
-        },
-        fadeInDown: {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(-30px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
-        },
-        slideInLeft: {
-          "0%": {
-            opacity: "0",
-            transform: "translateX(-30px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateX(0)",
-          },
-        },
-        slideInRight: {
-          "0%": {
-            opacity: "0",
-            transform: "translateX(30px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateX(0)",
-          },
-        },
-        float: {
-          "0%, 100%": {
-            transform: "translateY(0px)",
-          },
-          "50%": {
-            transform: "translateY(-20px)",
-          },
+  plugins: [react(), tailwindcss()],
+
+  // Optimisations de performance
+  build: {
+    // Optimisation du bundle
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Séparer les dépendances lourdes
+          "framer-motion": ["framer-motion"],
+          "react-vendor": ["react", "react-dom"],
+          icons: ["lucide-react", "react-icons"],
+          router: ["react-router-dom"],
         },
       },
     },
+    // Compression et minification
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+    // Optimisation CSS
+    cssMinify: true,
+    // Taille limite des chunks
+    chunkSizeWarningLimit: 1000,
   },
-  plugins: [react(), tailwindcss()],
+
+  // Optimisations de développement
+  server: {
+    // Préchargement des modules
+    warmup: {
+      clientFiles: ["./src/main.jsx", "./src/App.jsx"],
+    },
+  },
+
+  // Optimisations des assets
+  assetsInclude: ["**/*.webp", "**/*.avif"],
+
+  // Préprocesseur CSS optimisé
+  css: {
+    devSourcemap: true,
+    preprocessorOptions: {
+      css: {
+        charset: false,
+      },
+    },
+  },
 });

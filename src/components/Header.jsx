@@ -20,6 +20,7 @@ function Header() {
     { name: "A propos", href: "#apropos" },
     { name: "Services", href: "#service" },
     { name: "Equipes", href: "#equipe" },
+    { name: "Partenaires", href: "#partenaire" },
     // { name: "Partenaires", href: "#partenaire" },
   ];
 
@@ -55,7 +56,7 @@ function Header() {
           ))}
           <li>
             <a
-              href="#"
+              href="#contact"
               onClick={() => handleMenuClick("Contact")}
               className={`p-2 sm:p-3 flex justify-between items-center gap-2 sm:gap-3 font-bold rounded-md border-2 transition-all duration-300 ${
                 activeMenu === "Contact"

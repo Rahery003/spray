@@ -3,7 +3,7 @@ import { Image, PenTool, Users, Film, Globe, Smartphone } from "lucide-react";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef < HTMLElement > null;
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -93,6 +93,7 @@ const Skills = () => {
 
   return (
     <section
+      ref={sectionRef}
       id="skills"
       className="pt-20 pb-6 bg-gradient-to-br from-blue-100 via-white to-blue-300 dark:bg-[linear-gradient(to_bottom_right,#111827,#1e293b,rgb(27,0,133))]"
     >

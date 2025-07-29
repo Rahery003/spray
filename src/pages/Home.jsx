@@ -5,6 +5,8 @@ import Formation from "../components/Formation";
 import Services from "../components/Services";
 import Equipe from "../components/Equipe";
 import Footer from "../components/Footer";
+import Partenaire from "../components/Partenaire";
+import Contact from "../components/Contact";
 
 function Home() {
   return (
@@ -14,6 +16,8 @@ function Home() {
       <About />
       <Services />
       <Equipe />
+      <Partenaire />
+      <Contact />
       <Footer />
     </div>
   );

@@ -15,6 +15,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 import etudiantBackground from "/assets/etudiant2.jpg";
+import sprayx from "/assets/spray_x.png";
+import spraylearn from "/assets/learn.png";
 
 const Services = () => {
   const [hoveredService, setHoveredService] = useState(null);
@@ -74,7 +76,7 @@ const Services = () => {
 
   const services = [
     {
-      icon: Monitor,
+      icon: <img className="w-10" src={sprayx} />,
       title: "Spray_x",
       description: "Université privée",
       details:
@@ -92,7 +94,7 @@ const Services = () => {
       slideFrom: "left",
     },
     {
-      icon: MessageCircle,
+      icon: <img className="w-10" src={spraylearn} />,
       title: "Spray_Learn",
       description: "Formation et insertion professionnelle",
       details:
@@ -110,7 +112,7 @@ const Services = () => {
       slideFrom: "right",
     },
     {
-      icon: Users,
+      icon: <img className="w-10" src={spraylearn} />,
       title: "Spray_idea",
       description: "Cabinet de conseil",
       details:
@@ -128,7 +130,7 @@ const Services = () => {
       slideFrom: "left",
     },
     {
-      icon: Headphones,
+      icon: <img className="w-10" src={spraylearn} />,
       title: "Solutions Numériques",
       description: "Service de prestation Numérique",
       details:
@@ -265,10 +267,7 @@ url(${etudiantBackground})
                     className={`w-24 h-24 ${service.color} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:rotate-3 relative overflow-hidden`}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
-                    <service.icon
-                      className="text-white relative z-10"
-                      size={40}
-                    />
+                    {service.icon}
                     <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
 

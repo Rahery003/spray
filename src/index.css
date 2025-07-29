@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "./styles/animations.css";
+@import "./styles/responsive.css";
+
 /* Mode sombre pour le scrollbar */
 .dark ::-webkit-scrollbar-track {
   background: #374151;
@@ -157,4 +160,13 @@ a {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+/* global.css ou index.css */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
